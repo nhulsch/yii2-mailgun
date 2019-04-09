@@ -15,6 +15,12 @@
     "issues": "https://github.com/analyticsface/yii2-mailgun/issues?state=open",
     "source": "https://github.com/analyticsface/yii2-mailgun"
   },
+  "repositories": [
+    {
+      "type": "git",
+      "url": "git@github.com:mailgun/mailgun-php.git"
+    }
+  ],
   "require": {
     "yiisoft/yii2": "~2.0",
     "mailgun/mailgun-php": "dev-master#1bcce53387",
