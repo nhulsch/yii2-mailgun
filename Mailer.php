@@ -48,6 +48,11 @@ class Mailer extends BaseMailer
     public $domain;
 
     /**
+     * @var boolean EU instance?
+     */
+    public $eu = false;
+
+    /**
      * @var Mailgun Mailgun instance.
      */
     private $_mailgun;
@@ -97,6 +102,9 @@ class Mailer extends BaseMailer
         }
         if (!$this->domain) {
             throw new InvalidConfigException('Mailer::domain must be set.');
+        }
+        if ($this->eu) {
+            return Mailgun::create($this->key, 'https://api.eu.mailgun.net');
         }
         return Mailgun::create($this->key);
     }
